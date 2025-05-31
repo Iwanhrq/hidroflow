@@ -58,4 +58,19 @@ O firmware Sennity é a parte embarcada do sistema, responsável por ler os sens
 ### 🧪 Como usar o firmware
 
 1. Abra `main.ino` na Arduino IDE.  
-2. Adicione a URL de placas ESP32:  
+2. Adicione a URL de placas ESP32:
+3. Instale a placa `ESP32 by Espressif Systems`.  
+4. Selecione a placa `ESP32 Dev Module`.  
+5. Conecte o ESP32 via USB.  
+6. Durante o upload, **pressione o botão BOOT** até o início da escrita.  
+7. Use o Monitor Serial (baud rate `115200`) para visualizar os dados.
+
+---
+
+## 📂 Estrutura do Repositório
+
+```bash
+/
+├── app/          # Código do aplicativo mobile
+└── firmware/     # Código do ESP32 (Sennity)
+
