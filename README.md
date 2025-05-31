@@ -1,50 +1,55 @@
-# Welcome to your Expo app 👋
+@@ -1 +1,55 @@
+# Sennity – ESP32 Firmware
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Este diretório contém o código-fonte que roda no microcontrolador **ESP32**, responsável pela automação da irrigação da horta escolar no projeto **HidroFlow**. O firmware lê os dados dos sensores de umidade do solo e aciona automaticamente a bomba de água sempre que necessário, promovendo o uso sustentável da água reaproveitada do ar-condicionado da escola.
 
-## Get started
+## 📌 Funcionalidades
+- Leitura de sensores de umidade (entrada analógica)
+- Acionamento automático da bomba de irrigação (saída digital)
+- Monitoramento contínuo com intervalo configurável
+- Envio de dados via serial (e futuramente Wi-Fi, MQTT ou HTTP)
+- Compatível com simulação em Wokwi
 
-1. Install dependencies
+## 🔧 Requisitos
+- ESP32 DevKit (ou placa similar)
+- Arduino IDE ou PlatformIO
+- Cabo USB para upload
+- Sensor de umidade analógico
+- Bomba d'água de pequeno porte (5V ou 12V)
+- Transistor ou relé (para acionar a bomba)
+- Jumpers e protoboard
 
-   ```bash
-   npm install
-   ```
+## 🔌 Pinagem sugerida
 
-2. Start the app
+| Função                | Pino no ESP32 |
+|----------------------|---------------|
+| Sensor de Umidade    | GPIO 36       |
+| Bomba d'água (relé)  | GPIO 27       |
+| VCC (sensor)         | 3.3V          |
+| GND                  | GND           |
 
-   ```bash
-   npx expo start
-   ```
+> Obs.: os pinos podem ser alterados no código `main.ino` conforme a necessidade.
 
-In the output, you'll find options to open the app in a
+## 🧪 Como usar
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+1. Abra o arquivo `main.ino` na Arduino IDE.
+2. Instale a placa ESP32 se ainda não tiver:
+   - Vá em: **Arquivo > Preferências** → Adicione a URL:
+     ```
+     https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+     ```
+   - Depois vá em **Ferramentas > Placa > Gerenciador de Placas** e instale **ESP32 by Espressif Systems**.
+3. Selecione a placa: `ESP32 Dev Module`
+4. Conecte o ESP32 via USB.
+5. Durante o upload, **mantenha pressionado o botão BOOT** até iniciar a escrita.
+6. Abra o **Monitor Serial** com baud rate `115200` para ver os dados.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 🧰 Bibliotecas usadas
 
-## Get a fresh project
+- Nenhuma biblioteca externa no momento (apenas funções nativas do Arduino/ESP32)
 
-When you're ready, run:
+## 📤 Simulação
 
-```bash
-npm run reset-project
-```
+Você pode testar a lógica do firmware em [Wokwi](https://wokwi.com/).  
+(Em breve: link para simulação aqui)
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
