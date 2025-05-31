@@ -1,55 +1,96 @@
-@@ -1 +1,55 @@
-# Sennity – ESP32 Firmware
+💧 HidroFlow – Sistema de Irrigação Automatizada
+HidroFlow é uma solução inteligente de irrigação automatizada que reutiliza a água condensada de aparelhos de ar-condicionado para irrigar hortas escolares. O sistema promove o uso consciente da água e incentiva práticas sustentáveis no ambiente educacional.
 
-Este diretório contém o código-fonte que roda no microcontrolador **ESP32**, responsável pela automação da irrigação da horta escolar no projeto **HidroFlow**. O firmware lê os dados dos sensores de umidade do solo e aciona automaticamente a bomba de água sempre que necessário, promovendo o uso sustentável da água reaproveitada do ar-condicionado da escola.
+Este repositório contém o código-fonte do aplicativo mobile e o firmware para ESP32, ambos integrados para formar o sistema completo.
 
-## 📌 Funcionalidades
-- Leitura de sensores de umidade (entrada analógica)
-- Acionamento automático da bomba de irrigação (saída digital)
-- Monitoramento contínuo com intervalo configurável
-- Envio de dados via serial (e futuramente Wi-Fi, MQTT ou HTTP)
-- Compatível com simulação em Wokwi
+📱 Aplicativo Mobile
+O aplicativo HidroFlow é responsável por:
 
-## 🔧 Requisitos
-- ESP32 DevKit (ou placa similar)
-- Arduino IDE ou PlatformIO
-- Cabo USB para upload
-- Sensor de umidade analógico
-- Bomba d'água de pequeno porte (5V ou 12V)
-- Transistor ou relé (para acionar a bomba)
-- Jumpers e protoboard
+Monitorar a umidade do solo em tempo real
 
-## 🔌 Pinagem sugerida
+Exibir os dados coletados pelos sensores conectados ao ESP32
 
-| Função                | Pino no ESP32 |
-|----------------------|---------------|
-| Sensor de Umidade    | GPIO 36       |
-| Bomba d'água (relé)  | GPIO 27       |
-| VCC (sensor)         | 3.3V          |
-| GND                  | GND           |
+Permitir o acionamento manual da irrigação
 
-> Obs.: os pinos podem ser alterados no código `main.ino` conforme a necessidade.
+Oferecer uma interface intuitiva, projetada no Figma
 
-## 🧪 Como usar
+O app se comunica com o microcontrolador via Bluetooth (ou futuramente via Wi-Fi) para obter dados e controlar o sistema.
 
-1. Abra o arquivo `main.ino` na Arduino IDE.
-2. Instale a placa ESP32 se ainda não tiver:
-   - Vá em: **Arquivo > Preferências** → Adicione a URL:
-     ```
-     https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
-     ```
-   - Depois vá em **Ferramentas > Placa > Gerenciador de Placas** e instale **ESP32 by Espressif Systems**.
-3. Selecione a placa: `ESP32 Dev Module`
-4. Conecte o ESP32 via USB.
-5. Durante o upload, **mantenha pressionado o botão BOOT** até iniciar a escrita.
-6. Abra o **Monitor Serial** com baud rate `115200` para ver os dados.
+🔌 Firmware – Sennity (ESP32)
+O firmware Sennity é a parte embarcada do sistema, responsável por ler os sensores e controlar a bomba de água de forma autônoma.
 
-## 🧰 Bibliotecas usadas
+⚙️ Funcionalidades:
+Leitura de sensores de umidade (entrada analógica)
 
-- Nenhuma biblioteca externa no momento (apenas funções nativas do Arduino/ESP32)
+Acionamento automático da bomba de irrigação (saída digital)
 
-## 📤 Simulação
+Monitoramento contínuo com intervalo configurável
 
-Você pode testar a lógica do firmware em [Wokwi](https://wokwi.com/).  
-(Em breve: link para simulação aqui)
+Envio de dados via porta serial (futuramente por Wi-Fi com MQTT/HTTP)
 
+Compatível com simulação em Wokwi
+
+🔧 Requisitos:
+ESP32 DevKit (ou similar)
+
+Arduino IDE ou PlatformIO
+
+Sensor de umidade analógico
+
+Bomba d'água (5V ou 12V)
+
+Relé ou transistor
+
+Protoboard, jumpers e cabo USB
+
+🗂️ Pinagem Sugerida:
+Função	Pino no ESP32
+Sensor de Umidade	GPIO 36
+Bomba d'água (relé)	GPIO 27
+VCC (sensor)	3.3V
+GND	GND
+
+Os pinos podem ser modificados no arquivo main.ino.
+
+🧪 Como usar o firmware
+Abra main.ino na Arduino IDE.
+
+Adicione a URL de placas ESP32:
+
+bash
+Copiar
+Editar
+https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+Instale a placa ESP32 by Espressif Systems.
+
+Selecione a placa ESP32 Dev Module.
+
+Conecte o ESP32 via USB.
+
+Durante o upload, pressione o botão BOOT até o início da escrita.
+
+Use o Monitor Serial (baud rate 115200) para visualizar os dados.
+
+📤 Simulação
+Você pode testar o comportamento do firmware no Wokwi:
+(link da simulação será adicionado em breve)
+
+📂 Estrutura do Repositório
+bash
+Copiar
+Editar
+/
+├── app/          # Código do aplicativo mobile
+└── firmware/     # Código do ESP32 (Sennity)
+🌿 Licença
+Este projeto é de código aberto e licenciado sob a MIT License.
+
+Se quiser, posso incluir também:
+
+Badges (Build, License, Platform)
+
+Imagens da montagem ou da interface
+
+GIFs mostrando o funcionamento do sistema
+
+Quer que eu adicione algum desses itens?
