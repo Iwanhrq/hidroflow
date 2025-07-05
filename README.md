@@ -67,6 +67,15 @@ O firmware Sennity é a parte embarcada do sistema, responsável por ler os sens
 
 ---
 
+
+## Equipe
+
+- Design do site, parte do desenvolvimento e revisão do relatório: **[Mariana Araripe](https://github.com/marianaararipe)**  
+- Desenvolvimento do site: [Ivan Henrique](https://github.com/Iwanhrq)
+- Análise de dados: Pedro Filipini  
+- Relatório e edição de vídeo: [Emile Nogueira](https://github.com/EmileCristine)
+
+
 ## 📂 Estrutura do Repositório
 
 ```bash
