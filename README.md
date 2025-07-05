@@ -1,21 +1,22 @@
 # 💧 HidroFlow – Sistema de Irrigação Automatizada
 
-**HidroFlow** é uma solução inteligente de irrigação automatizada que reutiliza a água condensada de aparelhos de ar-condicionado para irrigar hortas escolares. O sistema promove o uso consciente da água e incentiva práticas sustentáveis no ambiente educacional.
+**HidroFlow** é uma solução inteligente que reutiliza a água condensada de aparelhos de ar-condicionado para irrigar hortas escolares. O sistema promove o **uso consciente da água** e incentiva **práticas sustentáveis** no ambiente educacional.
 
-Este repositório contém o código-fonte do **aplicativo mobile** e do **firmware para ESP32**, ambos integrados para formar o sistema completo.
+
+Este repositório contém o código-fonte do **aplicativo mobile** e do **firmware para ESP32**.
 
 ---
 
 ## 📱 Aplicativo Mobile
 
-O aplicativo HidroFlow é responsável por:
+O aplicativo HidroFlow permite:
 
 - Monitorar a umidade do solo em tempo real
-- Exibir os dados coletados pelos sensores conectados ao ESP32
-- Permitir o acionamento manual da irrigação
-- Oferecer uma interface intuitiva, projetada no Figma
+- Receber e exibir dados diretamente dos sensores conectados ao ESP32
+- Acionar a irrigação manualmente
+- Navegar por uma interface intuitiva (protótipos criados no [Figma](https://www.figma.com/design/atPiNbUl8kKxzwkkMnEreF/HidroFlow-App-Design---Sennity?node-id=0-1&t=aORT66O7alV9LDpt-1))
 
-> O app se comunica com o microcontrolador via Bluetooth (ou futuramente via Wi-Fi) para obter dados e controlar o sistema.
+> O app se comunica com o microcontrolador via **Bluetooth** (com possibilidade futura de **Wi-Fi**) para obter dados e controlar o sistema.
 
 ---
 
@@ -27,7 +28,8 @@ O firmware Sennity é a parte embarcada do sistema, responsável por ler os sens
 - Leitura de sensores de umidade (entrada analógica)
 - Acionamento automático da bomba de irrigação (saída digital)
 - Monitoramento contínuo com intervalo configurável
-- Envio de dados via porta serial *(futuramente por Wi-Fi com MQTT/HTTP)*
+- Envio de dados via porta serial
+> (com possibilidade futura de comunicação por **Wi-Fi com MQTT/HTTP**)
 - Compatível com simulação em [Wokwi](https://wokwi.com/)
 
 ---
@@ -55,7 +57,7 @@ O firmware Sennity é a parte embarcada do sistema, responsável por ler os sens
 
 ---
 
-### 🧪 Como usar o firmware
+### ▶️ Como usar o firmware
 
 1. Abra `main.ino` na Arduino IDE.  
 2. Adicione a URL de placas ESP32:
@@ -67,14 +69,13 @@ O firmware Sennity é a parte embarcada do sistema, responsável por ler os sens
 
 ---
 
+## 👥 Equipe
 
-## Equipe
+- 🎨 **[Mariana Araripe](https://github.com/marianaararipe)** – Responsável pelo **design das telas no Figma**, pela **documentação do projeto** e pela **realização dos testes com os sensores**  
+- 💻 **[Ivan Henrique](https://github.com/Iwanhrq)** – Responsável pelo **desenvolvimento das telas principais** do aplicativo, focando em **experiência de uso**  
+- 🔧 **[Davi França](https://github.com/Davi-Fran)** – Responsável pela **montagem inicial do protótipo físico** e pela **edição final do vídeo de apresentação**
 
-- Design do site, parte do desenvolvimento e revisão do relatório: **[Mariana Araripe](https://github.com/marianaararipe)**  
-- Desenvolvimento do site: [Ivan Henrique](https://github.com/Iwanhrq)
-- Análise de dados: Pedro Filipini  
-- Relatório e edição de vídeo: [Emile Nogueira](https://github.com/EmileCristine)
-
+---
 
 ## 📂 Estrutura do Repositório
 
@@ -82,4 +83,25 @@ O firmware Sennity é a parte embarcada do sistema, responsável por ler os sens
 /
 ├── app/          # Código do aplicativo mobile
 └── firmware/     # Código do ESP32 (Sennity)
+````
 
+---
+
+## 📚 Aprendizados
+
+Ao longo do desenvolvimento do HidroFlow, a equipe pôde aprimorar diversas competências técnicas e interpessoais, como:
+
+- Aplicação prática de sensores com ESP32 e microcontroladores
+- Integração entre hardware (protótipo físico) e software (aplicativo mobile)
+- Prototipação e design de interfaces com foco em usabilidade (Figma)
+- Testes com sensores e validação funcional do sistema
+- Trabalho em equipe, organização e gestão de tempo
+- Reflexão sobre sustentabilidade, inovação e impacto social com tecnologia
+
+---
+
+## 🙏 Agradecimentos
+
+Agradecemos ao professor **Rafael de Colle**, à **ETEC de Hortolândia** e à organização do **Desafio Learning Sectors 2025** pelo apoio, orientação e incentivo constante durante o desenvolvimento do projeto.
+
+O desafio foi uma oportunidade valiosa para aplicar a tecnologia em um contexto real, alinhado com os Objetivos de Desenvolvimento Sustentável 🌍
