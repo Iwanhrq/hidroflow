@@ -5,6 +5,10 @@
 
 Este repositório contém o código-fonte do **aplicativo mobile** e do **firmware para ESP32**.
 
+<p align="center">
+  <img width="1200" height="768" alt="sennity" src="https://github.com/user-attachments/assets/c8519ba1-0c53-4281-9ca5-649dc22cc3bd" />
+</p>
+
 ---
 
 ## 📱 Aplicativo Mobile
